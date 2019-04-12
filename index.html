@@ -12,20 +12,22 @@
     <script type="text/javascript">
 
         // Create a client instance
-        var port = 38971;
-        var host = "hostname";
-        var clientId = "client_id"
+        var port = 32051;
+        var host = "m16.cloudmqtt.com";
+        var clientId = "airstream";
+        var username = "";
+        var password = "";
         client = new Paho.MQTT.Client(host, port, clientId);
 
-        var topic = "prueba";
+        var topic = "out";
 
         // set callback handlers
         client.onConnectionLost = onConnectionLost;
         client.onMessageArrived = onMessageArrived;
         var options = {
             useSSL: true,
-            userName: "username",
-            password: "password",
+            userName: username,
+            password: password,
             onSuccess: onConnect,
             onFailure: doFail
         };
